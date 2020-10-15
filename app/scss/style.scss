@@ -1,8 +1,15 @@
-html{
-    box-sizing: border-box;
+@import 'vars';
+@import 'global';
+@import 'fonts';
+
+.header__top-inner{
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    align-items: center;
 }
-*,
-*::before,
-*::after{
-    box-sizing: inherit;
+.header__text{
+    margin-left: auto;
+    margin-right: 25px;
+    font-family: 'Roboto', sans-serif;
 }
