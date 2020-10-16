@@ -58,7 +58,7 @@ gulp.task('browser-sync', function() {   // плагин который авто
 });
 
 gulp.task('watch', function(){
-    gulp.watch('app/scss/style.scss', gulp.parallel('sass')) //смотрит за изменениями в файле стайл.цсс и сохраняет их
+    gulp.watch('app/scss/**/*.scss', gulp.parallel('sass')) //смотрит за изменениями в файле стайл.цсс и сохраняет их
     gulp.watch('app/*.html', gulp.parallel('html'))     // соответственно тоже смое для хтмл
     gulp.watch('app/js/*.js', gulp.parallel('js'))     // для js
 });
