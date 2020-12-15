@@ -8,7 +8,7 @@ let gulp = require('gulp'),
     cssmin = require('gulp-cssmin');
 
 gulp.task('sass', function(){
-    return gulp.src('app/scss/style.scss')    //находит файл стайл.сцсс
+    return gulp.src('app/scss/**/*.scss')    //находит файл стайл.сцсс
         .pipe(sass({outputStyle: 'compressed'}))   //код в минифицированный превращает
         .pipe(rename({suffix : '.min'}))    //переименовывает файл в мин.цсс
         .pipe(autoprefixer({
@@ -22,7 +22,12 @@ gulp.task('style', function(){   //обьединения цсс  файлов
     return gulp.src([
         'node_modules/normalize.css/normalize.css',
         'node_modules/slick-carousel/slick/slick.css',
-        'node_modules/magnific-popup/dist/magnific-popup.css' //перечисляем все модули которые хотим обьединить
+        'node_modules/magnific-popup/dist/magnific-popup.css', //перечисляем все модули которые хотим обьединить
+        'node_modules/rateyo/src/jquery.rateyo.css',
+        'node_modules/ion-rangeslider/css/ion.rangeSlider.css',
+        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
+        'node_modules/jquery-form-styler/dist/jquery.formstyler.css',
+        'node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css'
     ])
         .pipe(concat('libs.min.css'))    //обьединяем в файл
         .pipe(cssmin())
@@ -32,7 +37,12 @@ gulp.task('style', function(){   //обьединения цсс  файлов
 gulp.task('script', function(){   //обьединения js  файлов 
     return gulp.src([
         'node_modules/slick-carousel/slick/slick.js',
-        'node_modules/magnific-popup/dist/jquery.magnific-popup.js' //перечисляем все модули которые хотим обьединить
+        'node_modules/magnific-popup/dist/jquery.magnific-popup.js', //перечисляем все модули которые хотим обьединить
+        'node_modules/mixitup/dist/mixitup.js',
+        'node_modules/rateyo/src/jquery.rateyo.js',
+        'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
+        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+        'node_modules/jquery-form-styler/dist/jquery.formstyler.js'
     ])
         .pipe(concat('libs.min.js'))    //обьединяем в файл
         .pipe(uglifi())     // делаем минифицированным
@@ -58,7 +68,7 @@ gulp.task('browser-sync', function() {   // плагин который авто
 });
 
 gulp.task('watch', function(){
-    gulp.watch('app/scss/style.scss', gulp.parallel('sass')) //смотрит за изменениями в файле стайл.цсс и сохраняет их
+    gulp.watch('app/scss/**/*.scss', gulp.parallel('sass')) //смотрит за изменениями в файле стайл.цсс и сохраняет их
     gulp.watch('app/*.html', gulp.parallel('html'))     // соответственно тоже смое для хтмл
     gulp.watch('app/js/*.js', gulp.parallel('js'))     // для js
 });
