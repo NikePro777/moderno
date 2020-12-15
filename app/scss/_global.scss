@@ -21,7 +21,7 @@ li{
     list-style: none;
 }
 body{
-    font-family: 'Roboto-Regular', sans-serif; 
+    font-family: 'Roboto-Regular', sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
@@ -72,6 +72,8 @@ body{
 .breadcrumbs{
     &__inner{
         padding: 45px 0px 40px;
+        overflow: hidden;
+        width: 1200px;
     }
     &__list{
         li{
@@ -109,4 +111,7 @@ body{
         color: $green;
         font-size: 14px;
     }
+}
+#modal{
+    display: none;
 }
