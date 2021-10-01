@@ -8,8 +8,6 @@ html{
 }
 html, body{
     height: 100%;  
-    position: relative;
-    overflow-x: hidden;
 }
 a{
     display: inline-block;
@@ -28,6 +26,9 @@ body{
     font-size: 15px;
     line-height: 24px;
     color: $text;
+    position: relative;
+    overflow-x: hidden;
+    min-width: 320px;
 }
 .wrapper{
     display: flex;

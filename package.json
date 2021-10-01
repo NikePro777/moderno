@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
-    "jquery-form-styler": "^2.0.2"
+    "animate.css": "^4.1.1",
+    "jquery-form-styler": "^2.0.2",
+    "wow.js": "^1.2.2"
   }
 }
